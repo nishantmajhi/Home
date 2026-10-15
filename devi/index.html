@@ -1,0 +1,973 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>जगदम्बिका</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Primary SEO -->
+    <meta
+      name="description"
+      content="Explore the Kalika Yantra in immersive 3D. Each sacred layer - the transcendent Bindu, the Trikona triangles, the Padma lotus, and the earthly Bhupura - rendered as interactive sacred geometry you can rotate and explore."
+    />
+    <meta
+      name="keywords"
+      content="Kalika Yantra, Kali Yantra, 3D sacred geometry, Hindu art, Hindu yantra, interactive yantra, Three.js yantra, Bindu, Trikona, Padma, Bhupura, sacred geometry 3D, yantra visualization, Manish Majhi, जगदम्बिका, कालीका यन्त्र"
+    />
+    <meta name="author" content="Manish Majhi" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://manishmajhi.com.np/devi/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Manish Majhi" />
+    <meta property="og:title" content="जगदम्बिका - 3D Kalika Yantra" />
+    <meta
+      property="og:description"
+      content="Explore the Kalika Yantra in immersive 3D. Rotate, zoom and discover each sacred layer - from the transcendent Bindu at the apex to the earthly Bhupura at the base."
+    />
+    <meta property="og:url" content="https://manishmajhi.com.np/devi/" />
+    <meta
+      property="og:image"
+      content="https://manishmajhi.com.np/devi/img/yantra.webp"
+    />
+    <meta
+      property="og:image:alt"
+      content="3D Kalika Yantra sacred geometry visualization"
+    />
+    <meta property="og:image:width" content="3604" />
+    <meta property="og:image:height" content="3604" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@manishmajhi" />
+    <meta name="twitter:creator" content="@manishmajhi" />
+    <meta name="twitter:title" content="जगदम्बिका - 3D Kalika Yantra" />
+    <meta
+      name="twitter:description"
+      content="Explore the Kalika Yantra in immersive 3D. Rotate, zoom and discover each sacred layer - from the transcendent Bindu to the earthly Bhupura."
+    />
+    <meta
+      name="twitter:image"
+      content="https://manishmajhi.com.np/devi/img/yantra.webp"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="3D Kalika Yantra sacred geometry visualization"
+    />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://manishmajhi.com.np/#website",
+            "url": "https://manishmajhi.com.np/",
+            "name": "Manish Majhi",
+            "description": "Interactive 3D sacred geometry and Hindu art by Manish Majhi.",
+            "author": {
+              "@type": "Person",
+              "name": "Manish Majhi",
+              "url": "https://manishmajhi.com.np/"
+            }
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "https://manishmajhi.com.np/devi/",
+            "name": "जगदम्बिका - 3D Kalika Yantra",
+            "url": "https://manishmajhi.com.np/devi/",
+            "description": "Interactive 3D visualization of the sacred Kalika Yantra - an ancient Hindu geometric diagram where each symbol rises at its own spiritual elevation, from the cosmic Bindu at the summit to the earthly Bhupura at the base.",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Any",
+            "browserRequirements": "Requires JavaScript and WebGL",
+            "creator": {
+              "@type": "Person",
+              "name": "Manish Majhi",
+              "url": "https://manishmajhi.com.np/"
+            },
+            "image": "https://manishmajhi.com.np/devi/img/yantra.webp",
+            "keywords": "Kalika Yantra, Kali Yantra, 3D sacred geometry, 3D yantra, Hindu yantra",
+            "inLanguage": "en",
+            "isAccessibleForFree": true
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://manishmajhi.com.np/devi/#yantra",
+            "name": "Kalika Yantra",
+            "alternateName": "कालीका यन्त्र",
+            "description": "The Kalika Yantra is a sacred Hindu geometric diagram associated with the goddess Kali. It contains nested downward-pointing triangles (Trikona), concentric circles (Chakra), an eight-petal lotus (Padma), and a square earth-citadel (Bhupura), with the cosmic point Bindu at its centre.",
+            "image": "https://manishmajhi.com.np/devi/img/yantra.webp",
+            "creator": {
+              "@type": "Person",
+              "name": "Manish Majhi"
+            },
+            "about": {
+              "@type": "Thing",
+              "name": "Sacred Geometry",
+              "sameAs": "https://en.wikipedia.org/wiki/Yantra"
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 2D fallback styles are injected inside the body <noscript> block below,
+         where browsers reliably apply them when JS is disabled. -->
+
+    <!-- 3D page styles (only loaded when JS is enabled) -->
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --red: hsl(0, 100%, 40%);
+        --red-glow: hsl(0, 100%, 50%);
+        --white: #ffffff;
+        --silver: rgba(255, 255, 255, 0.55);
+        --dim: rgba(255, 255, 255, 0.22);
+        --accent: rgba(255, 230, 180, 0.7);
+        --bg: hsl(0, 0%, 0%);
+        --surface: hsl(0, 0%, 6%);
+        --font-display: "Newsreader", Georgia, serif;
+        --font-body: "Newsreader", Georgia, serif;
+        --font-ui: "Newsreader", Georgia, serif;
+        --header-h: 100px;
+        --footer-h: 64px;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        background: var(--bg);
+        color: var(--white);
+        font-family: var(--font-ui);
+      }
+
+      /* -- Canvas -- */
+      #three-canvas {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        display: block;
+      }
+
+      /* -- Full-screen UI shell -- */
+      #ui-shell {
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      /* -- Header -- */
+      header.ui-header {
+        width: 100%;
+        height: var(--header-h);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding-bottom: 12px;
+        flex-shrink: 0;
+      }
+
+      /* Mantra line - red, Newsreader, xx-large (mirrors devi.html h1) */
+      h1.title-mantra {
+        font-family: var(--font-display);
+        font-size: clamp(
+          1.125rem,
+          3.5vw,
+          1.75rem
+        ); /* approx xx-large, responsive */
+        font-weight: 400;
+        color: var(--red);
+        text-shadow: 0 0 28px hsla(0, 100%, 50%, 0.3);
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      /* Sub-title line - white, Newsreader, uppercase, slightly smaller */
+      p.title-sub {
+        font-family: var(--font-display);
+        font-size: clamp(0.45rem, 1vw, 0.55rem);
+        font-weight: 300;
+        letter-spacing: 0.35em;
+        color: var(--white);
+        text-transform: uppercase;
+        text-align: center;
+        white-space: nowrap;
+        margin-top: 5px;
+        opacity: 0.75;
+      }
+
+      /* Decorative rule */
+      .title-line {
+        width: 100px;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--silver),
+          transparent
+        );
+        margin-top: 10px;
+        flex-shrink: 0;
+      }
+
+      /* -- Spacer -- */
+      .canvas-spacer {
+        flex: 1 1 auto;
+      }
+
+      /* -- Footer -- */
+      footer.ui-footer {
+        width: 100%;
+        height: var(--footer-h);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      /* Toggle button - same palette as devi.html details/summary */
+      .auto-btn {
+        font-family: var(--font-display);
+        font-size: clamp(0.5rem, 1.6vw, 0.65rem);
+        letter-spacing: 0.25em;
+        color: var(--dim);
+        background: none;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 8px 22px;
+        cursor: pointer;
+        pointer-events: auto;
+        text-transform: uppercase;
+        transition:
+          color 0.3s,
+          border-color 0.3s;
+        white-space: nowrap;
+        border-radius: 0.25rem;
+      }
+      .auto-btn:hover {
+        color: var(--white);
+        border-color: var(--silver);
+      }
+      .auto-btn.active {
+        color: var(--red-glow);
+        border-color: hsla(0, 100%, 50%, 0.35);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ════════════════════════════════════════════════════════════
+         NO-JS FALLBACK - entire 2D page lives inside <noscript>.
+         When JS is enabled this block is completely ignored.
+         ════════════════════════════════════════════════════════════ -->
+    <noscript>
+      <style>
+        /* -- Reset -- */
+        *,
+        *::before,
+        *::after {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        /* -- Base - one scrollbar on html only -- */
+        html {
+          overflow-y: scroll;
+          overflow-x: hidden;
+          background-color: hsl(0, 0%, 0%);
+          width: auto;
+        }
+        body {
+          width: auto;
+          height: auto;
+          overflow: visible;
+          background-color: hsl(0, 0%, 0%);
+          color: hsl(0, 0%, 100%);
+          font-family: "Newsreader", Georgia, serif;
+        }
+
+        /* -- Yantra figure -- */
+        figure {
+          margin: 0 0 1rem;
+          text-align: center;
+        }
+
+        /* -- Mantra heading -- */
+        h1 {
+          text-align: center;
+          color: hsl(0, 100%, 40%);
+          font-family: "Newsreader", Georgia, serif;
+          font-weight: 400;
+          margin-bottom: 0.5rem;
+        }
+
+        /* -- Accordion -- */
+        details {
+          border-radius: 0.4rem;
+          padding: 1rem;
+          background-color: hsl(0, 0%, 6%);
+        }
+        details summary {
+          color: hsl(0, 0%, 75%);
+          cursor: pointer;
+          transition: color 0.4s;
+          list-style: none;
+        }
+        details summary::-webkit-details-marker {
+          display: none;
+        }
+        details summary::before {
+          content: "▷  ";
+          font-size: 0.75em;
+          opacity: 0.5;
+        }
+        details[open] summary::before {
+          content: "▽  ";
+        }
+        summary:hover {
+          color: hsl(0, 100%, 50%);
+        }
+        details[open] summary {
+          color: hsl(0, 100%, 40%);
+        }
+        details p {
+          margin: 0.75rem 1rem;
+          border-top: 1px dotted hsl(0, 0%, 50%);
+          padding-top: 0.75rem;
+          line-height: 1.5rem;
+          color: hsl(0, 0%, 88%);
+        }
+
+        /* -- Hide 3D elements -- */
+        #three-canvas,
+        #ui-shell {
+          display: none !important;
+        }
+
+        /* -- Responsive -- */
+        @media (orientation: landscape) {
+          body {
+            margin: 2rem auto 0;
+            padding-bottom: 2rem;
+          }
+          h1 {
+            font-size: xx-large;
+          }
+          figure img {
+            height: 90dvh;
+          }
+          article {
+            margin-inline: 4rem;
+          }
+          details {
+            margin-bottom: 0.75rem;
+          }
+          details summary {
+            font-size: 1.125rem;
+          }
+          details p {
+            font-size: 0.95rem;
+          }
+        }
+        @media (orientation: portrait) {
+          body {
+            padding: 2rem;
+          } /* padding, not margin - avoids adding to width */
+          h1 {
+            font-size: 1.125rem;
+          }
+          figure img {
+            width: 100%;
+          } /* 100% of padded body, no calc needed */
+          details {
+            margin-bottom: 0.6rem;
+          }
+          details summary {
+            font-size: 1rem;
+          }
+          details p {
+            font-size: 0.8rem;
+          }
+        }
+      </style>
+
+      <h1>ॐ क्रीं कालिकायै नमः</h1>
+      <figure>
+        <img src="./img/yantra.webp" alt="Kalika Yantra" />
+      </figure>
+      <article>
+        <details name="kalika_barnam" open>
+          <summary>Who is she?</summary>
+          <p>
+            The more I get to know her,<br />
+            the more I realize I don't know anything.
+          </p>
+        </details>
+        <details name="kalika_barnam">
+          <summary>How would you describe her?</summary>
+          <p>
+            She is everything I can think of;<br />
+            also everything my brain is not able to comprehend.
+          </p>
+        </details>
+        <details name="kalika_barnam">
+          <summary>How should someone start worshipping her?</summary>
+          <p>
+            Worshipping her is not something you start;<br />
+            it is she who decides if you should be.
+          </p>
+        </details>
+        <details name="kalika_barnam">
+          <summary>What can a person offer to the goddess?</summary>
+          <p>Nothing except pure love from our hearts.</p>
+        </details>
+      </article>
+    </noscript>
+
+    <!-- ════════════════════════════════════════════════════════════
+         3D PAGE - canvas + UI shell (hidden when JS is off)
+         ════════════════════════════════════════════════════════════ -->
+    <canvas id="three-canvas"></canvas>
+
+    <div id="ui-shell">
+      <header class="ui-header">
+        <h1 class="title-mantra">ॐ क्रीं कालिकायै नमः</h1>
+        <p class="title-sub">3D Kalika Yantra</p>
+        <div class="title-line"></div>
+      </header>
+
+      <div class="canvas-spacer"></div>
+
+      <footer class="ui-footer">
+        <button class="auto-btn" id="auto-btn">
+          ▷&nbsp;&nbsp;Resume Rotation
+        </button>
+      </footer>
+    </div>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- THREE.JS ENGINE -->
+    <script>
+      /*
+       * The <noscript> block above carries a complete 2D version of this page,
+       * for a visitor who has JavaScript switched off. It does not cover the
+       * commoner failure: JavaScript on and three.js or WebGL unavailable - a
+       * blocked or unreachable CDN, an offline machine, WebGL disabled, a
+       * device whose driver will not give a browser a context. The engine then
+       * threw on its first line and what was left was a black page, scroll
+       * locked, carrying a heading and a button that did nothing.
+       *
+       * <noscript> content is parsed as text when scripting is enabled, so its
+       * textContent is the markup, and this puts it back as markup.
+       */
+      function showFallback() {
+        var source = document.querySelector("noscript");
+        if (!source) return false;
+        // The scroll lock is an inline style and outranks the 2D stylesheet.
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+        document.body.innerHTML = source.textContent;
+        return true;
+      }
+    </script>
+    <script>
+      function startYantra() {
+        const HEADER_H = 100; // px - matches --header-h
+        const FOOTER_H = 64; // px - matches --footer-h
+
+        function vw() {
+          return window.innerWidth;
+        }
+        function vh() {
+          return window.innerHeight;
+        }
+
+        /* --- Auto-fit camera Z so yantra fills screen with margin -- */
+        function computeCameraZ() {
+          const halfFovTan = Math.tan((42 * Math.PI) / 180 / 2);
+          const YANTRA_HALF = 4.85; // outer square half-size (world units)
+          const MARGIN = 1.28; // 28% breathing room on all sides
+          const needed = YANTRA_HALF * MARGIN;
+
+          const usableH = vh() - HEADER_H - FOOTER_H;
+          const aspect = vw() / vh();
+
+          // Z so yantra fits vertically inside the usable (header/footer-clipped) band
+          const zForH = (needed * vh()) / (usableH * halfFovTan);
+          // Z so yantra fits horizontally inside the full viewport width
+          const zForW = needed / (aspect * halfFovTan);
+
+          // Use whichever constraint is tighter; clamp to sane zoom range
+          return Math.min(Math.max(Math.max(zForH, zForW), 8), 30);
+        }
+
+        /* --- Scene / Camera / Renderer ---------------------------- */
+        const canvas = document.getElementById("three-canvas");
+        const scene = new THREE.Scene();
+
+        const camera = new THREE.PerspectiveCamera(42, vw() / vh(), 0.1, 300);
+        camera.position.set(0, 0, computeCameraZ());
+        camera.lookAt(0, 0, 0);
+
+        const renderer = new THREE.WebGLRenderer({
+          canvas,
+          antialias: true,
+          alpha: false,
+        });
+        renderer.setSize(vw(), vh());
+        renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+        renderer.setClearColor(0x000000, 1);
+
+        /* --- Vertical centering in usable area -------------------- */
+        function shiftScene() {
+          const usableH = vh() - HEADER_H - FOOTER_H;
+          const centerY = HEADER_H + usableH / 2;
+          const offsetPx = vh() / 2 - centerY;
+          const fovRad = (42 * Math.PI) / 180;
+          const worldH = 2 * Math.tan(fovRad / 2) * camera.position.z;
+          Y.position.y = (offsetPx / vh()) * worldH;
+        }
+
+        /* --- Materials --------------------------------------------- */
+        const MAT = new THREE.LineBasicMaterial({
+          color: 0xffffff,
+          transparent: true,
+          opacity: 0.82,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false,
+        });
+        const MAT_DIM = new THREE.LineBasicMaterial({
+          color: 0xffffff,
+          transparent: true,
+          opacity: 0.35,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false,
+        });
+        const MAT_BRIGHT = new THREE.LineBasicMaterial({
+          color: 0xfffdf0,
+          transparent: true,
+          opacity: 0.95,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false,
+        });
+
+        /* --- Z Levels ---------------------------------------------- */
+        const Z = {
+          bindu: 4.4,
+          tri: [3.5, 2.85, 2.25, 1.68, 1.15],
+          circ: [0.98, 0.7, 0.42, 0.14], // 4 circles
+          petals: -0.55,
+          ocirc: [-1.1, -1.38], // 2 outer circles
+          sqIn: -1.65,
+          gates: -2.15,
+          sqO1: -2.55,
+          sqO2: -2.85,
+        };
+
+        /* --- Yantra dimensions ------------------------------------- */
+        const TRI_R = [0.52, 0.82, 1.15, 1.5, 1.9];
+        const CIRC_R = [1.95, 2.1, 2.25, 2.4]; // 4 inner circles
+        const PET_IN = 2.4,
+          PET_OUT = 3.15;
+        const OC_R = [3.55, 3.76]; // 2 outer circles
+        const SQ_IN = 3.92;
+        const G1 = 1.18,
+          G2 = 0.66;
+        const SQ_O1 = 4.65,
+          SQ_O2 = 4.85;
+
+        /* --- Helpers ----------------------------------------------- */
+        function mkLine(pts, mat) {
+          return new THREE.Line(
+            new THREE.BufferGeometry().setFromPoints(pts),
+            mat || MAT,
+          );
+        }
+        function mkCircle(r, z, segs, mat) {
+          const pts = [],
+            n = segs || 128;
+          for (let i = 0; i <= n; i++) {
+            const a = (i / n) * Math.PI * 2;
+            pts.push(new THREE.Vector3(Math.cos(a) * r, Math.sin(a) * r, z));
+          }
+          return mkLine(pts, mat);
+        }
+        function mkSquare(h, z, mat) {
+          return mkLine(
+            [
+              new THREE.Vector3(-h, h, z),
+              new THREE.Vector3(h, h, z),
+              new THREE.Vector3(h, -h, z),
+              new THREE.Vector3(-h, -h, z),
+              new THREE.Vector3(-h, h, z),
+            ],
+            mat,
+          );
+        }
+        function mkDownTri(R, z, mat) {
+          const s3 = Math.sqrt(3);
+          return mkLine(
+            [
+              new THREE.Vector3((-R * s3) / 2, R / 2, z),
+              new THREE.Vector3((R * s3) / 2, R / 2, z),
+              new THREE.Vector3(0, -R, z),
+              new THREE.Vector3((-R * s3) / 2, R / 2, z),
+            ],
+            mat,
+          );
+        }
+        function mkLotus(innerR, outerR, z, n, mat) {
+          n = n || 8;
+          const g = new THREE.Group();
+          const offset = Math.PI / n;
+          for (let i = 0; i < n; i++) {
+            const a0 = (i / n) * Math.PI * 2 + offset;
+            const a1 = ((i + 1) / n) * Math.PI * 2 + offset;
+            const aMid = (a0 + a1) / 2;
+            const lx = Math.cos(a0) * innerR,
+              ly = Math.sin(a0) * innerR;
+            const rx = Math.cos(a1) * innerR,
+              ry = Math.sin(a1) * innerR;
+            const tx = Math.cos(aMid) * outerR,
+              ty = Math.sin(aMid) * outerR;
+            const cR = outerR * 1.08;
+            const acL = a0 * 0.35 + aMid * 0.65;
+            const acR = aMid * 0.65 + a1 * 0.35;
+            const clx = Math.cos(acL) * cR,
+              cly = Math.sin(acL) * cR;
+            const crx = Math.cos(acR) * cR,
+              cry = Math.sin(acR) * cR;
+            g.add(
+              mkLine(
+                new THREE.QuadraticBezierCurve3(
+                  new THREE.Vector3(lx, ly, z),
+                  new THREE.Vector3(clx, cly, z),
+                  new THREE.Vector3(tx, ty, z),
+                ).getPoints(36),
+                mat,
+              ),
+            );
+            g.add(
+              mkLine(
+                new THREE.QuadraticBezierCurve3(
+                  new THREE.Vector3(tx, ty, z),
+                  new THREE.Vector3(crx, cry, z),
+                  new THREE.Vector3(rx, ry, z),
+                ).getPoints(36),
+                mat,
+              ),
+            );
+          }
+          return g;
+        }
+        function mkGate(g1, g2, iY, oY, mat) {
+          const mid = (iY + oY) / 2;
+          const grp = new THREE.Group();
+          grp.add(
+            mkLine(
+              [
+                new THREE.Vector3(-g1, iY, 0),
+                new THREE.Vector3(-g1, mid, 0),
+                new THREE.Vector3(g1, mid, 0),
+                new THREE.Vector3(g1, iY, 0),
+              ],
+              mat,
+            ),
+          );
+          grp.add(
+            mkLine(
+              [
+                new THREE.Vector3(-g2, mid, 0),
+                new THREE.Vector3(-g2, oY, 0),
+                new THREE.Vector3(g2, oY, 0),
+                new THREE.Vector3(g2, mid, 0),
+              ],
+              mat,
+            ),
+          );
+          return grp;
+        }
+
+        /* --- Build Yantra ------------------------------------------ */
+        const Y = new THREE.Group();
+        scene.add(Y);
+        shiftScene();
+
+        // 1. Bindu
+        const bindMesh = new THREE.Mesh(
+          new THREE.SphereGeometry(0.065, 16, 16),
+          new THREE.MeshBasicMaterial({ color: 0xffffff }),
+        );
+        bindMesh.position.z = Z.bindu;
+        Y.add(bindMesh);
+
+        const glowMesh = new THREE.Mesh(
+          new THREE.CircleGeometry(0.18, 32),
+          new THREE.MeshBasicMaterial({
+            color: 0xffffff,
+            transparent: true,
+            opacity: 0.08,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false,
+            side: THREE.DoubleSide,
+          }),
+        );
+        glowMesh.position.z = Z.bindu - 0.01;
+        Y.add(glowMesh);
+
+        // 2. Trikona
+        TRI_R.forEach((R, i) =>
+          Y.add(mkDownTri(R, Z.tri[i], i === 0 ? MAT_BRIGHT : MAT)),
+        );
+        // 3. Chakra
+        CIRC_R.forEach((R, i) => Y.add(mkCircle(R, Z.circ[i], 128, MAT)));
+        // 4. Padma
+        Y.add(mkLotus(PET_IN, PET_OUT, Z.petals, 8, MAT));
+        // 5. Outer circles (×2)
+        OC_R.forEach((r, i) => Y.add(mkCircle(r, Z.ocirc[i], 192, MAT)));
+        // 6. Bhupura inner square
+        Y.add(mkSquare(SQ_IN, Z.sqIn, MAT));
+        // 7. Gates
+        [0, Math.PI, -Math.PI / 2, Math.PI / 2].forEach((rot) => {
+          const g = mkGate(G1, G2, SQ_IN, SQ_O1, MAT);
+          g.rotation.z = rot;
+          g.position.z = Z.gates;
+          Y.add(g);
+        });
+        // 8. Outer double square
+        Y.add(mkSquare(SQ_O1, Z.sqO1, MAT));
+        Y.add(mkSquare(SQ_O2, Z.sqO2, MAT_DIM));
+
+        /* --- Starfield --------------------------------------------- */
+        const starVerts = [];
+        for (let i = 0; i < 2200; i++) {
+          starVerts.push(
+            (Math.random() - 0.5) * 90,
+            (Math.random() - 0.5) * 90,
+            -25 - Math.random() * 40,
+          );
+        }
+        const starGeo = new THREE.BufferGeometry();
+        starGeo.setAttribute(
+          "position",
+          new THREE.Float32BufferAttribute(starVerts, 3),
+        );
+        scene.add(
+          new THREE.Points(
+            starGeo,
+            new THREE.PointsMaterial({
+              color: 0xffffff,
+              size: 0.055,
+              transparent: true,
+              opacity: 0.45,
+              blending: THREE.AdditiveBlending,
+              depthWrite: false,
+              sizeAttenuation: true,
+            }),
+          ),
+        );
+
+        /* --- Interaction ------------------------------------------- */
+        window.__yantra = {
+          autoRotate: false,
+          setAuto: (v) => {
+            window.__yantra.autoRotate = v;
+          },
+        };
+
+        const btn = document.getElementById("auto-btn");
+
+        function syncBtn(state) {
+          if (state) {
+            btn.textContent = "⟳\u00a0\u00a0Auto-Rotating";
+            btn.classList.add("active");
+          } else {
+            btn.textContent = "▷\u00a0\u00a0Resume Rotation";
+            btn.classList.remove("active");
+          }
+        }
+
+        btn.addEventListener("click", () => {
+          const next = !window.__yantra.autoRotate;
+          if (next) autoY = cRY;
+          window.__yantra.setAuto(next);
+          syncBtn(next);
+        });
+
+        let drag = false,
+          prev = { x: 0, y: 0 };
+        let tRX = 0,
+          tRY = 0,
+          cRX = 0,
+          cRY = 0,
+          autoY = 0;
+        Y.rotation.x = 0;
+        Y.rotation.y = 0;
+
+        const getPos = (e) =>
+          e.touches
+            ? { x: e.touches[0].clientX, y: e.touches[0].clientY }
+            : { x: e.clientX, y: e.clientY };
+
+        document.addEventListener("mousedown", (e) => {
+          if (e.target === btn) return;
+          drag = true;
+          window.__yantra.setAuto(false);
+          syncBtn(false);
+          prev = getPos(e);
+        });
+        document.addEventListener(
+          "touchstart",
+          (e) => {
+            if (e.target === btn) return;
+            drag = true;
+            window.__yantra.setAuto(false);
+            syncBtn(false);
+            prev = getPos(e);
+          },
+          { passive: true },
+        );
+
+        document.addEventListener("mousemove", (e) => {
+          if (!drag) return;
+          const p = getPos(e);
+          tRY += (p.x - prev.x) * 0.009;
+          tRX += (p.y - prev.y) * 0.009;
+          tRX = Math.max(-1.3, Math.min(1.3, tRX));
+          prev = p;
+        });
+        document.addEventListener(
+          "touchmove",
+          (e) => {
+            if (!drag) return;
+            const p = getPos(e);
+            tRY += (p.x - prev.x) * 0.009;
+            tRX += (p.y - prev.y) * 0.009;
+            tRX = Math.max(-1.3, Math.min(1.3, tRX));
+            prev = p;
+          },
+          { passive: true },
+        );
+
+        document.addEventListener("mouseup", () => (drag = false));
+        document.addEventListener("touchend", () => (drag = false));
+
+        document.addEventListener(
+          "wheel",
+          (e) => {
+            camera.position.z = Math.max(
+              5,
+              Math.min(30, camera.position.z + e.deltaY * 0.012),
+            );
+            shiftScene();
+          },
+          { passive: true },
+        );
+
+        document.addEventListener("dblclick", (e) => {
+          if (e.target === btn) return;
+          tRX = 0;
+          tRY = 0;
+          cRX = 0;
+          cRY = 0;
+          autoY = 0;
+          Y.rotation.x = 0;
+          Y.rotation.y = 0;
+          camera.position.z = computeCameraZ();
+          shiftScene();
+        });
+
+        /* --- Animation loop ---------------------------------------- */
+        const clock = new THREE.Clock();
+        let time = 0;
+
+        (function animate() {
+          requestAnimationFrame(animate);
+          const dt = clock.getDelta();
+          time += dt;
+
+          if (window.__yantra.autoRotate) {
+            autoY += dt * 0.22;
+            Y.rotation.y = autoY;
+            Y.rotation.x = cRX + (0 - cRX) * 0.05;
+            cRX = Y.rotation.x;
+            tRX = cRX;
+            tRY = autoY;
+          } else {
+            cRX += (tRX - cRX) * 0.07;
+            cRY += (tRY - cRY) * 0.07;
+            Y.rotation.x = cRX;
+            Y.rotation.y = cRY;
+          }
+
+          const pulse = 1 + 0.28 * Math.sin(time * 2.6);
+          bindMesh.scale.setScalar(pulse);
+          glowMesh.scale.setScalar(pulse * 1.8);
+          glowMesh.material.opacity = 0.06 + 0.05 * Math.sin(time * 2.6);
+
+          renderer.render(scene, camera);
+        })();
+
+        /* --- Resize ------------------------------------------------ */
+        window.addEventListener("resize", () => {
+          camera.aspect = vw() / vh();
+          camera.updateProjectionMatrix();
+          renderer.setSize(vw(), vh());
+          camera.position.z = computeCameraZ();
+          shiftScene();
+        });
+      }
+    </script>
+    <script>
+      (function () {
+        if (typeof THREE === "undefined") {
+          showFallback();
+          return;
+        }
+        // Lock scroll for the 3D experience - after, not before, the page
+        // knows it has a 3D experience to lock the scroll for.
+        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+        try {
+          startYantra();
+        } catch (error) {
+          // WebGLRenderer throws here when there is no context to be had.
+          console.error("The 3D yantra could not start:", error);
+          showFallback();
+        }
+      })();
+    </script>
+  </body>
+</html>
